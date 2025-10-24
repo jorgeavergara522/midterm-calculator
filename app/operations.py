@@ -177,7 +177,7 @@ class OperationFactory:
     @classmethod
     def get_available_operations(cls) -> list:
         """Return list of available operation names."""
-        return list(cls._operations.keys())"""
+        return list(cls._operations.keys())
 Operation classes and Factory Pattern implementation.
 Provides arithmetic operations: add, subtract, multiply, divide, power, root, modulus, int_divide, percent, abs_diff
 """
