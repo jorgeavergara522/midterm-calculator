@@ -94,7 +94,9 @@ class CalculatorConfig:
         return (f"CalculatorConfig(log_dir='{self.log_dir}', "
                 f"history_dir='{self.history_dir}', "
                 f"max_history_size={self.max_history_size}, "
-                f"precision={self.precision})")"""
+                f"precision={self.precision})")
+        
+        """
 Configuration management for the calculator application.
 """
 
