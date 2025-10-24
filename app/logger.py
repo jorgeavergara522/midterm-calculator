@@ -92,7 +92,9 @@ class Logger:
             operand_b: Second operand
             result: Result of the calculation
         """
-        self.info(f"Calculation: {operand_a} {operation} {operand_b} = {result}")"""
+        self.info(f"Calculation: {operand_a} {operation} {operand_b} = {result}")
+        
+        """
 Logging configuration for the calculator application.
 """
 
