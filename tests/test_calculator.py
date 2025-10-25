@@ -20,7 +20,7 @@ class TestCalculator:
         assert calc.logger is not None
         assert calc.history is not None
         assert calc.caretaker is not None
-        assert len(calc.observers) >= 1  # At least logging observer
+        assert len(calc.observers) >= 1
     
     def test_perform_calculation_add(self):
         """Test performing addition."""
@@ -150,6 +150,25 @@ class TestCalculator:
         calc.register_observer(DummyObserver())
         
         assert len(calc.observers) == initial_count + 1
+    
+    def test_show_history(self, capsys):
+        """Test show_history prints output."""
+        calc = Calculator()
+        calc.perform_calculation('add', 5, 3)
+        
+        calc.show_history()
+        
+        captured = capsys.readouterr()
+        assert "Calculation History" in captured.out
+    
+    def test_show_help(self, capsys):
+        """Test show_help prints help."""
+        calc = Calculator()
+        
+        calc.show_help()
+        
+        captured = capsys.readouterr()
+        assert "Available Commands" in captured.out
 
 
 class TestLoggingObserver:
@@ -167,7 +186,6 @@ class TestLoggingObserver:
         calc = Calculation(AddOperation(), 5, 3)
         calc.execute()
         
-        # Should not raise error
         observer.update(calc)
 
 
